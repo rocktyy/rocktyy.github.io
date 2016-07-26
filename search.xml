@@ -4,6 +4,20 @@
   
     
     <entry>
+      <title></title>
+      <url>http://www.tianyuyan.net.cn/2016/07/26/%E8%B7%A8%E5%9F%9F%E5%B0%8F%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8/</url>
+      <content type="html"><![CDATA[<p>1.Mac下chrome跨域设置:<br>通过命令行启动chrome：<br>open -a “Google Chrome” –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
+<p>2.Window下chrome跨域设置:<br>属性 –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
+<p>3.分页设置  ：<a href="http://jqpaginator.keenwon.com/" target="_blank" rel="external">http://jqpaginator.keenwon.com/</a> 分页demo<br>4.<br>jquery判断浏览器后退时候弹出消息的方法:<br>实现<br>jQuery(document).ready(function ($) {<br>if (window.history &amp;&amp; window.history.pushState) {<br>$(window).on(‘popstate’, function () {<br>var hashLocation = location.hash;<br>var hashSplit = hashLocation.split(“#!/“);<br>var hashName = hashSplit[1];<br>if (hashName !== ‘’) {<br>var hash = window.location.hash;<br>if (hash === ‘’) {<br>alert(“Back button isn’t supported. You are leaving this application on next clicking the back button”);<br>}<br>}<br>});<br>window.history.pushState(‘forward’, null, ‘./#forward’);<br>}<br>});</p>
+<p>5.jquery 设置  disabled属性<br>//两种方法设置disabled属性<br>$(‘#areaSelect’).attr(“disabled”,true);<br>$(‘#areaSelect’).attr(“disabled”,”disabled”);<br>//三种方法移除disabled属性<br>$(‘#areaSelect’).attr(“disabled”,false);<br>$(‘#areaSelect’).removeAttr(“disabled”);<br>$(‘#areaSelect’).attr(“disabled”,””);</p>
+<ol>
+<li>手机触屏触摸特效javascript-TouchSwipe（依赖于jquery库）中文说明<br><a href="http://blog.csdn.net/bingqingsuimeng/article/details/39609899" target="_blank" rel="external">http://blog.csdn.net/bingqingsuimeng/article/details/39609899</a></li>
+</ol>
+<p>7.多行文本  显示。。。 <a href="http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html" target="_blank" rel="external">http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[gulp+less+vue+node]]></title>
       <url>http://www.tianyuyan.net.cn/2016/07/18/gulp-less-vue-node/</url>
       <content type="html"></content>
@@ -18,12 +32,6 @@
     <entry>
       <title><![CDATA[tyy blog]]></title>
       <url>http://www.tianyuyan.net.cn/2016/06/27/tyy-blog/</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[跨域小问题列表]]></title>
-      <url>http://www.tianyuyan.net.cn/2015/05/28/%E8%B7%A8%E5%9F%9F%E5%B0%8F%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8/</url>
       <content type="html"></content>
     </entry>
     
