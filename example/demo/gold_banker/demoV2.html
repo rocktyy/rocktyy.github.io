@@ -1,0 +1,695 @@
+
+<!-- saved from url=(0038)http://192.168.10.249:3000/demoV2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>
+        黄金钱包APP和wap交互规则V2
+    </title>
+</head>
+
+<body>
+<p>
+    </p><xmp id="show">
+    </xmp>
+<p></p>
+<p>
+    </p><xmp id="init">
+    </xmp>
+<p></p>
+<p>
+    js调用客户端方法只有一个send(data) 格式严格按照页面示例。客户端调用js的方法根据需求会有多个，名字需固定，目前有 isCanShare  和 getShareParams
+</p>
+
+<h3 align="center">3.4.0交互新增</h3>
+<p>
+    <input type="button" id="enter9" value="一元抢金条" onclick="BuyLottery();">
+</p>
+
+<hr>
+
+<h3 align="center">3.3.0交互新增</h3>
+<p>
+    <input type="button" id="enter9" value="调起客服" onclick="startCustomService();">
+</p>
+<p>
+    <input type="button" id="enter10" value="获取未读客服消息条数" onclick="getMsgCount();">
+</p>
+<p>
+    <input type="button" id="enter11" value="挖金矿现在去买金" onclick="openUrl0();">
+</p>
+<hr>
+
+<h3 align="center">3.1.0交互新增</h3>
+<p>
+    <input type="button" id="enter8" value="打开卖出黄金页面" onclick="openUrl4();">
+</p>
+<p>
+    <input type="button" id="enter" value="打开金价提醒页面" onclick="openUrl3();">
+</p>
+<p>
+    <input type="button" id="enter" value="获取金价" onclick="clientGoldPrice();">
+</p>
+<p>
+    <input type="button" id="enter" value="获取客户端的sessionID" onclick="userInfo();">
+</p>
+<p>
+    <input type="button" id="enter" value="评论" onclick="issueComment();">
+</p>
+<p>
+    <input type="button" id="enter" value="回复" onclick="issueComment();">
+</p>
+<p>
+    <input type="button" id="enter" value="显示toast" onclick="showToast();">
+</p>
+<p>
+    <input type="button" id="enter" value="举报" onclick="apReport();">
+</p>
+<hr>
+
+
+
+<h3 align="center">买金</h3>
+<p>
+    <input type="button" id="enter7" value="买活期黄金" onclick="buyGold1();">
+</p>
+<p>
+    <input type="button" id="enter7" value="买定期黄金30天" onclick="buyGold2();">
+</p>
+<p>
+    <input type="button" id="enter9" value="买保本金7天" onclick="buyGold3();">
+</p>
+<p>
+    <input type="button" id="enter9" value="买新手特权金90天" onclick="buyGold4();">
+</p>
+<hr>
+
+<h3 align="center">买理财</h3>
+<p>
+    <input type="button" id="enter10" value="理财看涨30天" onclick="buyFinance2();">
+</p>
+
+<p>
+    <input type="button" id="enter10" value="黄金看涨" onclick="buyFinance();">
+</p>
+
+<p>
+    <input type="button" id="enter10" value="黄金看跌" onclick="buyFinance();">
+</p>
+
+<p>
+    <input type="button" id="enter10" value="买定期理财" onclick="buyFinance3();">
+</p>
+<p>
+    <input type="button" id="enter10" value="买活期理财" onclick="buyFinance();">
+</p>
+
+<hr>
+
+
+<h3 align="center">活期转定期</h3>
+<p>
+    <input type="button" id="enter8" value="转箱底金30天" onclick="shiftGold();">
+</p>
+<hr>
+
+
+
+
+
+<h3 align="center">打开一个页面包括(app页面和网页)</h3>
+<p>
+    <input type="button" id="enter" value="在新的窗口打开网页" onclick="openUrl1();">
+</p>
+
+<p>
+    <input type="button" id="enter" value="在新的窗口打开app页面" onclick="openUrl2();">
+</p>
+<hr>
+
+<h3 align="center">打开第三方app，如果没有安装（android下载，ios跳到app store）</h3>
+<p>
+    <input type="button" id="enter1" value="startApp" onclick="startApp();">
+</p>
+<hr>
+
+<h3 align="center">分享</h3>
+<p>
+    分享分两种 1：带code的活动的分享，分享信息从服务器取得，例如挖金矿分享 用share方法，一般用于wap调用客户端  2：新闻页面的分享没有code，分享信息直接wap塞进来用getShareParams，一般用于客户端调用wap
+</p>
+<p>
+    <input type="button" id="enter6" value="新闻分享选择平台" onclick="share1();">
+</p>
+<p>
+    <input type="button" id="enter6" value="新闻分享到某个平台（例：朋友圈）" onclick="share2();">
+</p>
+<p>
+    <input type="button" id="enter5" value="截屏分享选择分享平台" onclick="share3();">
+</p>
+<p>
+    <input type="button" id="enter5" value="截屏分享直接分享到某个平台（例：QQ好友）" onclick="share4();">
+</p>
+<hr>
+
+<h3 align="center">其他通用功能</h3>
+<p>
+    <input type="button" id="enter3" value="未登录调起客户端登录" onclick="login();">
+</p>
+<p>
+    <input type="button" id="enter4" value="拨打客服电话" onclick="callServicePhone();">
+</p>
+<p>
+    <input type="button" id="enter4" value="跳到safari打开Url" onclick="openSafariUrl();">
+</p>
+<hr>
+
+
+
+
+
+<script>
+
+        function getPlatform() {
+          var userAgent = navigator.userAgent.toLowerCase();
+            if(userAgent.match(/(iphone|android|MicroMessenger)/)){
+                return userAgent.match(/(iphone|android|MicroMessenger)/)[1];
+             }
+             return '';
+        }
+
+        function send(data) {
+          if(getPlatform() == 'android') {
+            android.send(data);
+          }
+          else {
+            ios.send(data);
+          }
+        }
+
+
+        //买金，买流动金
+        function buyGold1() {
+        var deposit = {
+                "depositType" : "0"
+                };
+        send({
+                'methodName' : 'buyGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {alert(responseJSONMessage)}
+        });
+        }
+
+        //买金，买箱底金30
+        function buyGold2() {
+                var deposit = {
+                    "depositType" : 71
+                };
+
+        send({
+                'methodName' : 'buyGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+        //买金，买箱底金30
+        function buyGold3() {
+                var deposit = {
+                    "depositType" : 100009
+                };
+
+        send({
+                'methodName' : 'buyGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+        //买理财（包含猜涨跌）
+        function buyFinance1() {
+        var deposit = {
+                "depositType" : "0"
+                };
+        send({
+                'methodName' : 'buyFinance',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+        //买理财（包含猜涨跌）
+        function buyFinance2() {
+        var deposit = {
+                "depositType" : 200001
+                };
+        send({
+                'methodName' : 'buyFinance',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+        //买理财（包含猜涨跌）
+        function buyFinance3() {
+        var deposit = {
+                  "depositType" : 200003
+                };
+        send({
+                'methodName' : 'buyFinance',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+        //一元抢金条
+        function BuyLottery() {
+        send({
+                'methodName' : 'buyLottery',
+                'data' : {"lotteryActId":"asdfasdfadsf"},
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+        //转箱底金 （转箱底金30天）
+        function shiftGold() {
+                var deposit = {
+                    "depositType" : 1
+                };
+        send({
+                'methodName' : 'shiftGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+
+        // //卖金
+        // function sellGold() {
+        //         var deposit = {
+        //         };
+        // send({
+        //         'methodName' : 'sellGold',
+        //         'data' : deposit,
+        //         'responseCallback' : function (responseJSONMessage) {}
+        // });
+        // }
+
+
+        //买保本金  保本黄金1天（2.7.0 已经废弃，归于buyGold）
+        function breakevenGold() {
+                var deposit = {
+                    "depositType" : 100010
+                };
+
+        send({
+                'methodName' : 'breakevenGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+        //猜涨跌（钱生钱） （黄金看涨）（描述是否要添加？）（2.7.0已经废弃，归于buyFinance）
+        function guessGold() {
+                var deposit = {
+                    "depositName" : "黄金看涨90天",
+                    "choseType" : "1",
+                    "moneyDescription" : "",
+                    "moneyMin" : "0",
+                    "moneyMax" : "100",
+                    "endTime" : "2016-01-08 10:00:00",
+                    "startTime" : "2016-01-07 11:52:00",
+                    "code":"guessGoldPrice"
+                };
+        send({
+                'methodName' : 'guessGold',
+                'data' : deposit,
+                'responseCallback' : function (responseJSONMessage) {}
+        });
+        }
+
+
+        //新闻选择分享 （新闻类分享分享信息根据code去服务器取，截屏类分享）
+        function share1() {
+            send({
+                'methodName' : 'share',
+                'data' : {
+                 'type':"1",//分享类型 1：新闻类分享  2：截图分享
+                 'code' : 'privilege',//活动code，分享统计标示
+                 'needLogin' : '1',
+                 'platform' : '0',//0:弹出选择平台 1:微信好友 2:微信朋友圈 3：QQ好友 4：QQ空间 5：复制链接
+                 'pushShareMark' : '1',//是否需要统计用户分享（挖金矿需求）
+                },
+                'responseCallback' : function (responseJSONMessage) {}
+            });
+        }
+
+        //新闻直接分享
+        function share2() {
+            send({
+                'methodName' : 'share',
+                'data' : {
+                 'type':"1",//分享类型 1：新闻类分享  2：截图分享
+                 'code' : 'privilege',//活动code，分享统计标示
+                 'platform' : '2',//0:弹出选择平台 1:微信好友 2:微信朋友圈 3：QQ好友 4：QQ空间 5：复制链接
+                 'needLogin' : '1',
+                 'pushShareMark' : '1',//是否需要统计用户分享（挖金矿需求）
+                },
+                'responseCallback' : function (responseJSONMessage) {}
+            });
+        }
+
+        //截屏选择分享
+        function share3() {
+            send({
+                'methodName' : 'share',
+                'data' : {
+                 'type':"2",//分享类型 1：新闻类分享  2：截图分享
+                 'code' : 'privilege',//活动code，分享统计标示
+                 'needLogin' : '1',
+                 'platform' : '0',//0:弹出选择平台 1:微信好友 2:微信朋友圈 3：QQ好友 4：QQ空间 5：复制链接
+                 'pushShareMark' : '1'//是否需要统计用户分享（挖金矿需求）
+                },
+                'responseCallback' : function (responseJSONMessage) {}
+            });
+        }
+
+        //截屏直接分享
+        function share4() {
+            send({
+                'methodName' : 'share',
+                'data' : {
+                 'type':"2",//分享类型 1：新闻类分享  2：截图分享
+                 'code' : 'privilege',//活动code，分享统计标示
+                 'needLogin' : '1',
+                 'platform' : '3',//0:弹出选择平台 1:微信好友 2:微信朋友圈 3：QQ好友 4：QQ空间 5：复制链接
+                 'pushShareMark' : '1'//是否需要统计用户分享（挖金矿需求）
+                },
+                'responseCallback' : function (responseJSONMessage) {}
+            });
+        }
+
+        //打電話
+         function callServicePhone() {
+             send({
+                 'methodName' : 'callServicePhone',
+                 'data' : {
+                   'title': "拨打电话",
+                   'message': "工作时间：7x24小时不休息！",
+                   'telephone': "4006527878",
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //登录
+          /*
+         responseData:
+         {'loginStatus':"0"};
+         //"0"代表未登录，"1"代表已登陆
+         */
+         function login() {
+             send({
+                 'methodName' : 'login',
+                 'data' : {},
+                 'responseCallback' : function (responseJSONMessage) {document.getElementById("show").innerHTML = responseJSONMessage;}
+             });
+         }
+
+         //调起客服
+         function startCustomService() {
+             send({
+                 'methodName' : 'startCustomService',
+                 'data' : {},
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //打开推广
+         function startApp() {
+             if(getPlatform() == 'android') {
+               android.send({
+                   'methodName' : 'startApp',
+                   'data' : {
+                       'packageName' : 'com.metals',//包名
+                       'pageName' : 'com.metals.MainTabHostActivity',//启动界面
+                       'url' :'http://www.zsgjs.com/down/',//APK下载地址
+                       'params' : 'params=1'//可以为空
+                   },
+                   'responseCallback' : function (responseJSONMessage) {}
+               });
+             }
+             else {
+               ios.send({
+                   'methodName' : 'startApp',
+                   'data' : {
+                       'appUrl' : 'gbankerPro://',//scheme（注意格式XX://）
+                       'itunesUrl': 'https://itunes.apple.com/cn/app/huang-jin-qian-bao-quan-ke/id927245218?mt=8'//APPStore下载地址
+                   },
+                   'responseCallback' : function (responseJSONMessage) {}
+               });
+             }
+         }
+
+         //挖金矿买金页面
+         function openUrl0() {
+             send({
+                 'methodName' : 'openUrl',
+                 'data' : {
+                     'url' :'gbanker://page_financing',
+                     "params":{}
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //新页面打开一个网页或者一个app页面
+         function openUrl1() {
+             send({
+                 'methodName' : 'openUrl',
+                 'data' : {
+                     'url' :'http://www.zsgjs.com/down/',
+                     "params":{"orderID":"kjadsfu1h3rjalksdj"}
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //新页面打开一个网页或者一个app页面
+         function openUrl2() {
+             send({
+                 'methodName' : 'openUrl',
+                 'data' : {
+                     'url' :'gbanker://page_hongbao',
+                     "params":{"orderID":"kjadsfu1h3rjalksdj"}
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //打开APP金价提醒
+         function openUrl3() {
+             send({
+                 'methodName' : 'openUrl',
+                 'data' : {
+                     'url' :'gbanker://page_priceremind',
+                     "params":{}
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+         //打开卖金页面
+         function openUrl4() {
+             send({
+                 'methodName' : 'openUrl',
+                 'data' : {
+                     'url' :'gbanker://page_sale',
+                     "params":{}
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+
+         //新页面打开一个网页或者一个app页面
+         function openSafariUrl() {
+             send({
+                 'methodName' : 'openSafariUrl',
+                 'data' : {
+                     'url' :'http://www.baidu.com'
+                 },
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //获取客户端金价
+         /*
+         responseData:
+         {'price':28398,
+          'serverTime':1468982126162
+          };
+         */
+         function clientGoldPrice() {
+             send({
+                 'methodName' : 'clientGoldPrice',
+                 'data' : {},
+                 'responseCallback' : function (responseJSONMessage) {alert(responseJSONMessage)}
+             });
+         }
+
+         //sessionID
+         /*
+         responseData:
+         {"sessionID":'kajdflahjdsfhjadljhkflkjhad'
+         ‘telephone’：“18928282828”};
+         */
+         function userInfo() {
+             send({
+                 'methodName' : 'userInfo',
+                 'data' : {},
+                 'responseCallback' : function (responseJSONMessage) {alert(responseJSONMessage)}
+             });
+         }
+
+         //获取未读客服消息条数
+         /*
+         responseData:
+         {"unReadMsgCount":3};
+         */
+         function getMsgCount() {
+             send({
+                 'methodName' : 'getMsgCount',
+                 'data' : {},
+                 'responseCallback' : function (responseJSONMessage) {alert(responseJSONMessage)}
+             });
+         }
+
+         //显示评论或者回复的框（发表评论、回复评论）
+         function issueComment() {
+             send({
+                 'methodName' : 'issueComment',
+                 'data' : {'title':'发表评论'},
+                 'responseCallback' : function (responseJSONMessage) {
+                   alert(responseJSONMessage);
+                 }
+             });
+         }
+
+         //回复(暂时不用)
+         /*
+         function replyComment() {
+             send({
+                 'methodName' : 'replyComment',
+                 'data' : {'commentId':'adfadsfafdadsffqeq'},
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+         */
+
+         //显示toast
+         function showToast() {
+             send({
+                 'methodName' : 'showToast',
+                 'data' : {'msg':'我是toast的内容'},
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+         //举报功能
+         function apReport() {
+             send({
+                 'methodName' : 'apReport',
+                 'data' : {'commentId':'kahf091832lkadjf'},
+                 'responseCallback' : function (responseJSONMessage) {}
+             });
+         }
+
+
+
+/*****************************************************************************客户端调用JS*******************************************************************************/
+
+/**********************************iOS********************************************/
+function clientIsReady(clent) {
+  //alert(clent);
+  console.log(clent);
+}
+
+function clientIsReady(clent) {
+  // alert(clent);
+  console.log(clent);
+}
+
+//评论结果回调
+/*
+  或得用户输入信息 {"content":"O(∩_∩)O哈哈~，我是测试内容"}
+*/
+function issueCommentAppCallBack(response) {
+  alert(response['content']);
+}
+
+//回复结果回调（暂时不用）
+/*
+function replyCommentAppCallBack(response) {
+}
+*/
+
+        function isCanShare() {
+          send({
+              'methodName' : 'isCanShare',
+              'data' : {
+                      "isCanShare" : "1"
+              },
+              'responseCallback' : function (responseJSONMessage) {}
+          });
+        }
+         //右上角分享按钮JS调用 这个方法名得固定
+         function getShareParams(){
+           send({
+               'methodName' : 'getShareParams',
+               'data' : {
+                'type':1,//分享类型 1：新闻类分享  2：截图分享
+                'code' : 'oldPullNew',//活动code，分享统计标示
+                'needLogin' : '1',
+                'platform' : '0',//0:弹出选择平台 1:微信好友 2:微信朋友圈 3：QQ好友 4：QQ空间 5：复制链接
+                'pushShareMark' : '1',//是否需要统计用户分享（挖金矿需求）
+                'title' : '黄金2016年会有大反弹',
+                'imageUrl' : 'http://static.huangjinqianbao.com/static/img/storeIcon/xinjiekouwanfeng.png',
+                'url':'https://www.g-banker.com/headline/detail?id=1ad22ebcef2e487dadc67a6f125db746',
+                'description':'周三美原油期货下跌0.46美元至每桶28.00美元，稍早曾跌至27.92美元，创2003年9月以来新低。'
+               },
+               'responseCallback' : function (responseJSONMessage) {}
+           });
+         }
+
+/*********************************android*********************************************/
+
+        function initJsBridge(callback) {
+            if (window.android) {
+                callback(android)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(android)
+                    },
+                    false
+                );
+            }
+        }
+
+        initJsBridge(function(android) {
+            android.init();
+              //分享
+            android.registerHandler("isCanShare", function(data, responseCallback) {
+                responseCallback(true);
+            });
+
+            var params = {'type':2,'title' : '黄金2016年会有大反弹', 'imageUrl' : 'http://static.huangjinqianbao.com/static/img/storeIcon/xinjiekouwanfeng.png','url':'https://www.g-banker.com/headline/detail?id=1ad22ebcef2e487dadc67a6f125db746','description':'周三美原油期货下跌0.46美元至每桶28.00美元，稍早曾跌至27.92美元，创2003年9月以来新低。'};
+              //获取分享参数
+            android.registerHandler("getShareParams", function(data, responseCallback) {
+                responseCallback(params);
+            });
+        })
+
+
+</script>
+
+
+</body></html>
