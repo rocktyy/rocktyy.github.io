@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="personal blog for technical communication">
-<meta property="og:type" content="website">
+<meta name="description" content="title: 布局分析date: 2014-07-18 10:14:55
+tags:关于DIV+CSS布局中用到的CSS必备知识请看：http://www.kwstu.com/ArticleView/divcss_201442291125960DIV+CSS布局中主要CSS属性介绍：Float:       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道标">
+<meta property="og:type" content="article">
 <meta property="og:title" content="rockTyy">
-<meta property="og:url" content="http://www.tianyuyan.net.cn/index.html">
+<meta property="og:url" content="http://www.tianyuyan.net.cn/2016/07/18/layout/index.html">
 <meta property="og:site_name" content="rockTyy">
-<meta property="og:description" content="personal blog for technical communication">
+<meta property="og:description" content="title: 布局分析date: 2014-07-18 10:14:55
+tags:关于DIV+CSS布局中用到的CSS必备知识请看：http://www.kwstu.com/ArticleView/divcss_201442291125960DIV+CSS布局中主要CSS属性介绍：Float:       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道标">
+<meta property="og:updated_time" content="2016-10-17T03:38:55.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rockTyy">
-<meta name="twitter:description" content="personal blog for technical communication">
+<meta name="twitter:description" content="title: 布局分析date: 2014-07-18 10:14:55
+tags:关于DIV+CSS布局中用到的CSS必备知识请看：http://www.kwstu.com/ArticleView/divcss_201442291125960DIV+CSS布局中主要CSS属性介绍：Float:       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道标">
 
 
 
@@ -113,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://www.tianyuyan.net.cn/"/>
+  <link rel="canonical" href="http://www.tianyuyan.net.cn/2016/07/18/layout/"/>
 
-  <title> rockTyy </title>
+  <title>  | rockTyy </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -291,9 +293,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/18/layout/" itemprop="url">
-                  未命名
-                </a>
               
             
           </h1>
@@ -333,9 +332,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <p>title: 布局分析<br>date: 2014-07-18 10:14:55</p>
 <h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>关于DIV+CSS布局中用到的CSS必备知识请看：<a href="http://www.kwstu.com/ArticleView/divcss_201442291125960" target="_blank" rel="external">http://www.kwstu.com/ArticleView/divcss_201442291125960</a><br>DIV+CSS布局中主要CSS属性介绍：<br>Float:<br>       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道<div>标签默认一行只能显示一个，而使用Float属性可以实现一行显示多个div的功能，最直接解释方法就是能实现表格布局的多列功能。<br>Margin:<br>       Margin属性用于设置两个元素之间的距离。<br>Padding:<br>       Padding属性用于设置一个元素的边框与其内容的距离。<br>Clear:<br>       使用Float属性设置一行有多个DIV后（多列），最好在下一行开始之前使用Clear属性清楚一下浮动，否则上面的布局会影响到下面。<br>实例讲解：下面使用实例如果做一个简单又基本的布局，效果如下图：</div></p>
 <p>代码：<br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</a></p>
@@ -345,16 +342,19 @@
 <p><body></body></p>
 <p><div id="Container"><br>    <div id="Header"><br>        <div id="logo">这里设置了padding属性介绍一下padding的用法,padding将设置文本与边框的距离。</div><br>    </div><br>    <div id="Content"><br>        <div id="Content-Left">Content-Left</div><br>        <div id="Content-Main">Content-Main</div><br>    </div><br>    <div class="Clear"><!--如何你上面用到float,下面布局开始前最好清除一下。--></div><br>    <div id="Footer">Footer</div><br></div><br><br><br>注解：Container作为整个页面的容器，控制着整个页面在浏览器的位置，此处使用margin:0 auto;控制Container容器在浏览器中水平居中，一般固定宽度的布局都会用到这就代码。<br>本文只讲述最基本的布局，在具体开发实践中可能会遇到浏览器兼容性等其他问题，遇到细节问题请自行百度解决，解决的多了经验就积累起来了。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -362,222 +362,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/27/My-New-Post/" rel="next" title="html缓存.txt">
+                <i class="fa fa-chevron-left"></i> html缓存.txt
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/06/27/My-New-Post/" itemprop="url">
-                  html缓存.txt
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-27T12:30:00+08:00" content="2016-06-27">
-              2016-06-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>一小时搞定DIV+CSS布局-固定页面开度布局</p>
-<p>本文讲解使用DIV+CSS布局最基本的内容，读完本文你讲会使用DIV+CSS进行简单的页面布局。<br>转载请标明：<a href="http://www.kwstu.com/ArticleView/divcss_2013929173533658" target="_blank" rel="external">http://www.kwstu.com/ArticleView/divcss_2013929173533658</a><br>关于DIV+CSS布局中用到的CSS必备知识请看：<a href="http://www.kwstu.com/ArticleView/divcss_201442291125960" target="_blank" rel="external">http://www.kwstu.com/ArticleView/divcss_201442291125960</a><br>DIV+CSS布局中主要CSS属性介绍：<br>Float:<br>       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道<div>标签默认一行只能显示一个，而使用Float属性可以实现一行显示多个div的功能，最直接解释方法就是能实现表格布局的多列功能。<br>Margin:<br>       Margin属性用于设置两个元素之间的距离。<br>Padding:<br>       Padding属性用于设置一个元素的边框与其内容的距离。<br>Clear:<br>       使用Float属性设置一行有多个DIV后（多列），最好在下一行开始之前使用Clear属性清楚一下浮动，否则上面的布局会影响到下面。<br>实例讲解：下面使用实例如果做一个简单又基本的布局，效果如下图：</div></p>
-<p>代码：<br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</a></p>
-<p><html xmlns="http://www.w3.org/1999/xhtml"></html></p>
-<head><br><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><br><title>DIV+CSS布局教程</title><br><style type="text/css"><br>#Container{<br>    width:1000px;<br>    margin:0 auto;/<em>设置整个容器在浏览器中水平居中</em>/<br>    background:#CF3;<br>}<br>#Header{<br>    height:80px;<br>    background:#093;<br>}<br>#logo{<br>    padding-left:50px;<br>    padding-top:20px;<br>    padding-bottom:50px;<br>}<br>#Content{<br>    height:600px;<br>    /<em>此处对容器设置了高度，一般不建议对容器设置高度，一般使用overflow:auto;属性设置容器根据内容自适应高度，如果不指定高度或不设置自适应高度，容器将默认为1个字符高度，容器下方的布局元素（footer）设置margin-top:属性将无效</em>/<br>    margin-top:20px;/<em>此处讲解margin的用法，设置content与上面header元素之间的距离</em>/<br>    background:#0FF;<br><br>}<br>#Content-Left{<br>    height:400px;<br>    width:200px;<br>    margin:20px;/<em>设置元素跟其他元素的距离为20像素</em>/<br>    float:left;/<em>设置浮动，实现多列效果，div+Css布局中很重要的</em>/<br>    background:#90C;<br>}<br>#Content-Main{<br>    height:400px;<br>    width:720px;<br>    margin:20px;/<em>设置元素跟其他元素的距离为20像素</em>/<br>    float:left;/<em>设置浮动，实现多列效果，div+Css布局中很重要的</em>/<br>    background:#90C;<br>}<br>/<em>注：Content-Left和Content-Main元素是Content元素的子元素，两个元素使用了float:left;设置成两列，这个两个元素的宽度和这个两个元素设置的padding、margin的和一定不能大于父层Content元素的宽度，否则设置列将失败</em>/<br>#Footer{<br>    height:40px;<br>    background:#90C;<br>    margin-top:20px;<br>}<br>.Clear{<br>    clear:both;<br>}<br></style><br></head>
-
-<p><body></body></p>
-<p><div id="Container"><br>    <div id="Header"><br>        <div id="logo">这里设置了padding属性介绍一下padding的用法,padding将设置文本与边框的距离。</div><br>    </div><br>    <div id="Content"><br>        <div id="Content-Left">Content-Left</div><br>        <div id="Content-Main">Content-Main</div><br>    </div><br>    <div class="Clear"><!--如何你上面用到float,下面布局开始前最好清除一下。--></div><br>    <div id="Footer">Footer</div><br></div><br><br><br>注解：Container作为整个页面的容器，控制着整个页面在浏览器的位置，此处使用margin:0 auto;控制Container容器在浏览器中水平居中，一般固定宽度的布局都会用到这就代码。<br>本文只讲述最基本的布局，在具体开发实践中可能会遇到浏览器兼容性等其他问题，遇到细节问题请自行百度解决，解决的多了经验就积累起来了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/06/27/tyy-blog/" itemprop="url">
-                  跨域问题列表
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-06-27T12:06:17+08:00" content="2014-06-27">
-              2014-06-27
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.Mac下chrome跨域设置:<br>通过命令行启动chrome：<br>open -a “Google Chrome” –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
-<p>2.Window下chrome跨域设置:<br>属性 –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
-<p>3.分页设置  ：<a href="http://jqpaginator.keenwon.com/" target="_blank" rel="external">http://jqpaginator.keenwon.com/</a> 分页demo</p>
-<p>4.<br>jquery判断浏览器后退时候弹出消息的方法:<br>实现<br>jQuery(document).ready(function ($) {<br>if (window.history &amp;&amp; window.history.pushState) {<br>$(window).on(‘popstate’, function () {<br>var hashLocation = location.hash;<br>var hashSplit = hashLocation.split(“#!/“);<br>var hashName = hashSplit[1];<br>if (hashName !== ‘’) {<br>var hash = window.location.hash;<br>if (hash === ‘’) {<br>alert(“Back button isn’t supported. You are leaving this application on next clicking the back button”);<br>}<br>}<br>});<br>window.history.pushState(‘forward’, null, ‘./#forward’);<br>}<br>});</p>
-<p>5.jquery 设置  disabled属性<br>//两种方法设置disabled属性<br>$(‘#areaSelect’).attr(“disabled”,true);<br>$(‘#areaSelect’).attr(“disabled”,”disabled”);<br>//三种方法移除disabled属性<br>$(‘#areaSelect’).attr(“disabled”,false);<br>$(‘#areaSelect’).removeAttr(“disabled”);<br>$(‘#areaSelect’).attr(“disabled”,””);</p>
-<ol>
-<li>手机触屏触摸特效javascript-TouchSwipe（依赖于jquery库）中文说明<br><a href="http://blog.csdn.net/bingqingsuimeng/article/details/39609899" target="_blank" rel="external">http://blog.csdn.net/bingqingsuimeng/article/details/39609899</a></li>
-</ol>
-<p>7.多行文本  显示。。。 <a href="http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html" target="_blank" rel="external">http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -585,6 +395,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -604,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://tva2.sinaimg.cn/crop.4.0.125.125.180/c4b7c1b4jw8f67624d4gtj2046046wej.jpg"
@@ -670,6 +493,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -773,6 +607,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
