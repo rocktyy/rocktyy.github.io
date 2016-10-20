@@ -3,7 +3,7 @@ define(function (require, exports, module) {
     var World = require('./mod/World');
     var ImgLoader = require('./mod/ImgLoad.js');
     var launcher;  
-    var arrPreLoadImg = ['./img/night.jpg', './img/lizi.png'];
+    var arrPreLoadImg = ['./img/skins/start1.jpg', './img/lizi.png'];
     ImgLoader(arrPreLoadImg, function (o) { 
         if (o == 1) {
             sourcesLoaded();
@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     function sourcesLoaded() {
         var imgBackground = new Image();
         var imgLizi       = new Image();
-        imgBackground.src = './img/night.jpg';
+        imgBackground.src = './img/skins/start1.jpg';
         imgLizi.src = './img/lizi2.png';
 
         var canvas = document.getElementById('stage'); 
