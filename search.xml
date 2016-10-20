@@ -5,6 +5,19 @@
     
     <entry>
       <title></title>
+      <url>http://www.tianyuyan.net.cn/2016/10/20/%E7%B2%92%E5%AD%90%E6%98%9F%E7%A9%BA/</url>
+      <content type="html"><![CDATA[<hr>
+<p>title: 粒子星空<br>date: 2016-10-20 19:05:54</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>small_grain<br>粒子星空<br>之前看过一个人写的 <a href="https://github.com/jation/CanvasGrain" target="_blank" rel="external">https://github.com/jation/CanvasGrain</a></p>
+<p>由此产生想法,想通过js，canvas，jquery等构造一个 粒子的世界 (好流弊的idea) </p>
+<p>会一步一步优化，现在主要思路来自 –jation</p>
+<p>观看地址：<a href="https://rocktyy.github.io/example/demo/grain_life" target="_blank" rel="external">https://rocktyy.github.io/example/demo/grain_life</a></p>
+<p>0.0.1 版本 实现移动端的适配问题</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>http://www.tianyuyan.net.cn/2016/10/17/ckeditor/</url>
       <content type="html"><![CDATA[<hr>
 <p>title: ckeditor<br>date: 2016-10-17 17:04:39</p>
