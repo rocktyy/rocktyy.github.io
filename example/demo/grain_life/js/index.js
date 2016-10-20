@@ -3,12 +3,15 @@ define(function (require, exports, module) {
     var World = require('./mod/World');
     var ImgLoader = require('./mod/ImgLoad.js');
     var launcher;  
-    var arrPreLoadImg = ['./img/skins/start1.jpg', './img/lizi.png'];
+    var arrPreLoadImg = ['./img/skins/start1.jpg', './img/lizi.png','./img/skins/start1.jpg','./img/skins/start2.jpg',
+            './img/skins/start3.jpg','./img/skins/start4.jpg','./img/skins/start5.jpg','./img/skins/start6.jpg']  
+    
     ImgLoader(arrPreLoadImg, function (o) { 
         if (o == 1) {
             sourcesLoaded();
         }
     }); 
+    var world ;
 
     function sourcesLoaded() {
         var imgBackground = new Image();
@@ -17,6 +20,8 @@ define(function (require, exports, module) {
         imgLizi.src = './img/lizi2.png';
 
         var canvas = document.getElementById('stage'); 
+        var change = document.getElementById('change-themes');
+
         var media = new Audio("./img/mp3/voice.mp3"); 
         var bgMedia = $("#bg-music"); 
         //  bgMedia.trigger('pause'); 
@@ -24,7 +29,7 @@ define(function (require, exports, module) {
         canvas.height =  $('.grain').css('height').replace('px','');  
         var launcher; 
 
-        var world = new World({
+        world = new World({
             backgroundImage: imgBackground,
             canvas: canvas,
             minWind: -1,
@@ -137,7 +142,23 @@ define(function (require, exports, module) {
             if(launcher){
                 launcher.status = false;
             }
-        });
+        }); 
+
+        change.addEventListener('click', function (e) {  
+            var arr = ['./img/skins/start1.jpg','./img/skins/start2.jpg',
+            './img/skins/start3.jpg','./img/skins/start4.jpg',
+            './img/skins/start5.jpg','./img/skins/start6.jpg']   
+
+            var imgBackground = new Image(); 
+            imgBackground.src = arr[parseInt((Math.random()*6))];
+            world.updateBackground(imgBackground);
+            var sleep =  function sleep(n) { 
+                //n表示的毫秒数
+                var start = new Date().getTime();
+                while (true) if (new Date().getTime() - start > n) break;
+            }  
+            sleep(600);
+        })
 
         setInterval(function () {
             world.timeTick();

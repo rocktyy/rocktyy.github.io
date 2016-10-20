@@ -162,6 +162,14 @@ define(function(require, exports, module) {
         this.context.restore();
     };
 
+    /**
+     * 
+        更换图片 
+    */
+    World.prototype.updateBackground = function(img){
+        this.backgroundImage = img;
+    }; 
+
 
 
     module.exports = World;
