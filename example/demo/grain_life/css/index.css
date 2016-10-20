@@ -1,0 +1,23 @@
+/***初始化***/
+/***rem转换方法****/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  color: #3a3a3a;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+/*函数列表*/
+/*函数列表 end*/
+.grain {
+  width: 10rem;
+  height: 100%;
+  margin: 0 auto;
+  /* canvas 画布 */
+}
+.grain canvas {
+  display: inline-block;
+}
