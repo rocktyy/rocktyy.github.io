@@ -30,10 +30,10 @@ define(function (require, exports, module) {
         });   
         canvas.addEventListener('touchend', function (e) {
             e.preventDefault();
-            var length = world.launchers.length;
+           /* var length = world.launchers.length;
             if(length > 0){ 
                 world.clearLauncher();
-            } 
+            } */
         }); 
         canvas.addEventListener('touchstart', function (e) { 
                 var ctx = canvas.getContext("2d"); 
