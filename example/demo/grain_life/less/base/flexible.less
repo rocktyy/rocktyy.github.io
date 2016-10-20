@@ -1,0 +1,90 @@
+/***rem转换方法****/
+.px2rem(@name, @px){
+    @{name}: @px  / 75 * 1rem;
+}
+
+.px2px(@name, @px){
+    @{name}: round(@px / 2) * 1px;
+  [data-dpr="2"] & {
+      @{name}: @px * 1px;
+  }
+  // for mx3
+  [data-dpr="2.5"] & {
+      @{name}: round(@px * 2.5 / 2) * 1px;
+  }
+  // for 小米note
+  [data-dpr="2.75"] & {
+      @{name}: round(@px * 2.75 / 2) * 1px;
+  }
+  [data-dpr="3"] & {
+      @{name}: round(@px * 3 / 2 ) * 1px
+  }
+  // for 三星note4
+  [data-dpr="4"] & {
+      @{name}: @px * 2px;
+  }
+}
+
+.borderBottom(@px,@type, @color){
+  border-bottom-style: @type;
+  border-bottom-color:@color;
+  .px2px(border-bottom-width,@px);
+}
+.borderTop(@px,@type, @color){
+  border-top-style: @type;
+  border-top-color:@color;
+  .px2px(border-top-width,@px);
+}
+
+.backgroundSize(@x,@y){
+ // @{name}: round(@y / 2) * 1px;
+  [data-dpr="1"] & {
+    background-size: (@x/2)*1px (@y/2)*1px;
+  }
+  [data-dpr="2"] & {
+
+    background-size: @x*1px @y*1px;
+  }
+  // for mx3
+  [data-dpr="2.5"] & {
+    background-size: round(@x * 2.5 / 2) * 1px round(@y * 2.5 / 2) * 1px;
+  }
+  // for 小米note
+  [data-dpr="2.75"] & {
+    background-size: round(@x * 2.75 / 2) * 1px round(@y * 2.75 / 2) * 1px;
+  }
+  [data-dpr="3"] & {
+    background-size: round(@x * 3 / 2 ) * 1px round(@y * 3 / 2 ) * 1px;
+  }
+  // for 三星note4
+  [data-dpr="4"] & {
+    background-size: @x * 2px @y * 2px;
+  }
+}
+.backgroundPosition (@x,@y){
+  [data-dpr="1"] & {
+    background-position: (@x/2)*1px (@y/2)*1px;
+  }
+  [data-dpr="2"] & {
+    background-position: @x*1px @y*1px;
+  }
+  // for mx3
+  [data-dpr="2.5"] & {
+    background-position: round(@x * 2.5 / 2) * 1px round(@y * 2.5 / 2) * 1px;
+  }
+  // for 小米note
+  [data-dpr="2.75"] & {
+    background-position: round(@x * 2.75 / 2) * 1px round(@y * 2.75 / 2) * 1px;
+  }
+  [data-dpr="3"] & {
+    background-position: round(@x * 3 / 2 ) * 1px round(@y * 3 / 2 ) * 1px;
+  }
+  // for 三星note4
+  [data-dpr="4"] & {
+    background-position: @x * 2px @y * 2px;
+  }
+}
+//在含有fix顶等元素时，在页面less文件的开头添加如下以防止闪动
+.hasfixed(){
+        html,body{_background-image:url(about:blank);_background-attachment:fixed;}
+    }
