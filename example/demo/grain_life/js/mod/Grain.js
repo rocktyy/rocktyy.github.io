@@ -115,6 +115,10 @@ define(function (require, exports, module) {
             this.world.context.drawImage(this.launcher.grainImage, this.x-(this.sizeX)/2, this.y-(this.sizeY)/2, this.sizeX, this.sizeY);
             this.world.context.restore();
         }
-    }; 
-    module.exports = Grain;  
+    };
+
+
+    module.exports = Grain;
+
+
 });

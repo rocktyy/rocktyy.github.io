@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
     var Util = require('./Util');
-    var Grain = require('./Grain'); 
+    var Grain = require('./Grain');
+
     /**
      * 发射器构造函数
      * @param config
@@ -89,6 +90,7 @@ define(function (require, exports, module) {
         this.grainInfluencedByLauncherWind = config.grainInfluencedByLauncherWind ;
         this.grainInfluencedByLauncherHeat = config.grainInfluencedByLauncherHeat ;
 
+        this.status = 1;//1正常工作 2暂停生产粒子
     }
 
     Launcher.prototype.enableWind = function () {
@@ -113,22 +115,15 @@ define(function (require, exports, module) {
             this.heat = Util.randomFloat(this.minHeat, this.maxHeat);
         }
     };
-
     Launcher.prototype.swipeDeadGrain = function (grain_id) {
-
         for (var i = 0; i < this.grainList.length; i++) {
             if (grain_id == this.grainList[i].id) {
                 this.grainList = this.grainList.remove(i);
-                this.createGrain(1);
-                break;
-            }
-        }
-    };
-
-    Launcher.prototype.swipeDeadGrains  = function (grain_id) { 
-        for (var i = 0; i < this.grainList.length; i++) {
-            if (grain_id == this.grainList[i].id) {
-                this.grainList = this.grainList.remove(i); 
+                //console.log(this.grainList.length,i);
+                if(this.status==1){
+                    this.createGrain(1);
+                }else{
+                }
                 break;
             }
         }
@@ -152,7 +147,7 @@ define(function (require, exports, module) {
         for (var i = 0; i < count; i++) {
             var _rd = Util.randomFloat(0, Math.PI * 2);
             var _grain = new Grain({
-                id: Util.randomString("", 8),
+                id: Util.randomString("", 10),
                 world: this.world,
                 launcher: this,
                 x: this.x + Util.randomFloat(-this.rangeX,this.rangeX),
@@ -166,7 +161,7 @@ define(function (require, exports, module) {
                 life: this.grainLife + Util.randomFloat(-this.grainLifeRange,this.grainLifeRange),
                 birthTime: parseFloat(this.world.time),
                 influencedByWorldWind: this.grainInfluencedByWorldWind,
-                influencedByWorldHeat: this.grainInfluencedByWorlHeat,
+                influencedByWorldHeat: this.grainInfluencedByWorldHeat,
                 influencedByWorldGravity: this.grainInfluencedByWorldGravity,
                 influencedByLauncherWind: this.grainInfluencedByLauncherWind,
                 influencedByLauncherHeat: this.grainInfluencedByLauncherHeat
@@ -182,6 +177,9 @@ define(function (require, exports, module) {
         for (var i = 0; i < this.grainList.length; i++) {
             this.grainList[i].paint();
         }
-    }; 
-    module.exports = Launcher; 
+    };
+
+
+    module.exports = Launcher;
+
 });

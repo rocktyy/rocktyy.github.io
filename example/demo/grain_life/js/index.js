@@ -10,12 +10,15 @@ define(function (require, exports, module) {
         }
     }); 
     function sourcesLoaded() {
-        var imgBackground = new Image(),
-            imgLizi = new Image();
+        var imgBackground = new Image();
+        var imgLizi       = new Image();
         imgBackground.src = './img/night.jpg';
         imgLizi.src = './img/lizi2.png';
 
         var canvas = document.getElementById('stage'); 
+        var media = new Audio("./img/mp3/voice.mp3"); 
+        var bgMedia = $("#bg-music"); 
+
         canvas.width  =  $('.grain').css('width').replace('px','');
         canvas.height =  $('.grain').css('height').replace('px',''); 
 
@@ -28,18 +31,39 @@ define(function (require, exports, module) {
             maxHeat: 0.01,
             gravity: 1
         });   
-        canvas.addEventListener('touchend', function (e) {
-            e.preventDefault();
-           /* var length = world.launchers.length;
-            if(length > 0){ 
-                world.clearLauncher();
-            } */
-        }); 
-        canvas.addEventListener('touchstart', function (e) { 
-                var ctx = canvas.getContext("2d"); 
-                ctx.fillStyle = "#ffffff"; 
-                ctx.fillText('CodePlayer+中文测试', 300,300);   
 
+        var cw = parseInt(getComputedStyle(canvas).width);
+        var scaleRate = cw/canvas.width;
+        if('touchstart' in window) scaleRate = 1; 
+
+        canvas.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+            if(launcher){ 
+                launcher.x = event.touches[0].clientX;
+                launcher.y = event.touches[0].clientY;  
+            }
+        });
+
+        canvas.addEventListener('touchend', function (e) { 
+            e.preventDefault();
+            //声音
+            media.pause(); 
+            bgMedia.trigger('play');
+            if(launcher){
+                launcher.status = false;
+            }
+        }); 
+        canvas.addEventListener('touchstart', function (e) {  
+            //播放声音   
+            bgMedia.trigger('pause');
+            media.play();
+            /*
+            var ctx = canvas.getContext("2d"); 
+            ctx.fillStyle = "#ffffff"; 
+            ctx.fillText('CodePlayer+中文测试', 300,300);   
+            */
+ 
+            if(!launcher){
                 launcher =  world.createLauncher({
                     id: Util.randomString("", 8),
                     world: world,
@@ -67,7 +91,12 @@ define(function (require, exports, module) {
                     "maxAliveCount": 100,
                     "grainLife": 2.5,
                     "grainLifeRange": 1.5
-            }); 
+                })
+            }else{
+                launcher.status = 1; 
+                launcher.x = event.touches[0].clientX;
+                launcher.y = event.touches[0].clientY;  
+            };
         }, false); 
         //世界刷新的频率
         setInterval(function () {

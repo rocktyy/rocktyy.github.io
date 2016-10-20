@@ -9,12 +9,24 @@
 <body>    
     <div class="grain">
         <canvas  id="stage">    
-        </canvas>  
-    </div>
+        </canvas>   
+        <audio id="bg-music" preload="auto" src="img/mp3/start.mp3" loop="loop"></audio>
+    </div> 
     <script type="text/javascript" src="js/lib/autoLayout.js"></script>
     <script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/lib/seajs.2.1.1.min.js"></script>
-    <script>
+    <script> 
+        //自动监听 
+        document.addEventListener('DOMContentLoaded', function () {
+            function audioAutoPlay() {
+                var audio = document.getElementById('bg-music');
+                    audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
         seajs.config({});
         seajs.use("./js/index.js");
     </script> 
