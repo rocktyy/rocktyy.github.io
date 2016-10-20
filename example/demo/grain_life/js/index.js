@@ -9,6 +9,7 @@ define(function (require, exports, module) {
             sourcesLoaded();
         }
     }); 
+
     function sourcesLoaded() {
         var imgBackground = new Image();
         var imgLizi       = new Image();
@@ -18,9 +19,10 @@ define(function (require, exports, module) {
         var canvas = document.getElementById('stage'); 
         var media = new Audio("./img/mp3/voice.mp3"); 
         var bgMedia = $("#bg-music"); 
-
+        //  bgMedia.trigger('pause'); 
         canvas.width  =  $('.grain').css('width').replace('px','');
-        canvas.height =  $('.grain').css('height').replace('px',''); 
+        canvas.height =  $('.grain').css('height').replace('px','');  
+        var launcher; 
 
         var world = new World({
             backgroundImage: imgBackground,
@@ -30,48 +32,67 @@ define(function (require, exports, module) {
             minHeat: 0.91,
             maxHeat: 0.01,
             gravity: 1
-        });   
+        });    
+         
+        //闪烁的星空
+        world.createLauncher({
+            id: Util.randomString("", 8),
+            world: world,
+            grainImage: imgLizi,
+            x: 220,
+            y: 300,
+            rangeX: 440,
+            rangeY: 600,
+            sizeX: 4,
+            sizeY: 4,
+            sizeRange: 0,
+            initGrainVx: 0,
+            initGrainVy: 0,
+            initGrainVxRange: 0,
+            initGrainVyRange: 0,
+            grainInfluencedByLauncherWind: false,
+            grainInfluencedByLauncherHeat: false,
+            grainInfluencedByWorldWind: false,
+            grainInfluencedByWorlHeat: false,
+            grainInfluencedByWorldGravity: false,
+            maxAliveCount: 100,
+            maxHeat: 0,
+            minHeat: 0,
+            maxWind: 0,
+            minWind: 0,
+            grainLife: 2,
+            grainLifeRange: 0.1
+        });
 
         var cw = parseInt(getComputedStyle(canvas).width);
         var scaleRate = cw/canvas.width;
-        if('touchstart' in window) scaleRate = 1; 
+        if('touchstart' in window) scaleRate = 1;
+        function getMousePos(canvas, evt) {
+            return {
+                x: (evt.changedTouches[0].pageX)/scaleRate,
+                y: (evt.changedTouches[0].pageY)/scaleRate
+            };
+        } 
 
-        canvas.addEventListener('touchmove', function (e) {
-            e.preventDefault();
-            if(launcher){ 
-                launcher.x = event.touches[0].clientX;
-                launcher.y = event.touches[0].clientY;  
-            }
-        });
-
-        canvas.addEventListener('touchend', function (e) { 
-            e.preventDefault();
-            //声音
-            media.pause(); 
-            bgMedia.trigger('play');
-            if(launcher){
-                launcher.status = false;
-            }
-        }); 
-        canvas.addEventListener('touchstart', function (e) {  
+        canvas.addEventListener('touchstart', function (e) {
             //播放声音   
-            bgMedia.trigger('pause');
             media.play();
             /*
             var ctx = canvas.getContext("2d"); 
             ctx.fillStyle = "#ffffff"; 
             ctx.fillText('CodePlayer+中文测试', 300,300);   
-            */
- 
+            */ 
+            e.preventDefault();
+            var mousePos = getMousePos(canvas,e);
             if(!launcher){
-                launcher =  world.createLauncher({
-                    id: Util.randomString("", 8),
-                    world: world,
+                var config = {
+                    id:Util.randomString("", 8),
+                    world:world,
                     grainImage: imgLizi,
-                    rangeX: parseInt($('#rangeX').val()),
-                    rangeY: parseInt($('#rangeY').val()),
-                    x: event.touches[0].clientX,
-                    y: event.touches[0].clientY, 
+                    "rangeX": 0,
+                    "rangeY": 0,
+                    "x": 748,
+                    "y": 423,
                     "sizeX": 64,
                     "sizeY": 64,
                     "sizeRange": 0,
@@ -91,19 +112,37 @@ define(function (require, exports, module) {
                     "maxAliveCount": 100,
                     "grainLife": 2.5,
                     "grainLifeRange": 1.5
-                })
+                };
+                launcher = world.createLauncher(config);
             }else{
-                launcher.status = 1; 
-                launcher.x = event.touches[0].clientX;
-                launcher.y = event.touches[0].clientY;  
-            };
-        }, false); 
-        //世界刷新的频率
-        setInterval(function () {
-            world.timeTick();
+                launcher.status = 1;
+                launcher.x = mousePos.x;
+                launcher.y = mousePos.y;
+            }
+        }, false);
+
+        canvas.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+            if(launcher){
+                var mousePos = getMousePos(canvas,e);
+                launcher.x = mousePos.x;
+                launcher.y = mousePos.y;
+            }
+        });
+
+        canvas.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            //声音
+            media.pause();  
             if(launcher){
                 launcher.status = false;
             }
-        }, 60);
-    }  
+        });
+
+        setInterval(function () {
+            world.timeTick();
+        }, 60);  
+    } 
+
 });
+
