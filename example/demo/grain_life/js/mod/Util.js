@@ -7,8 +7,7 @@ define(function(require, exports, module) {
                 return this.slice(0,index).concat(this.slice(index+1,this.length));
             }
         }
-    })();
-
+    })(); 
 
     var Util = {};
 

@@ -177,8 +177,7 @@ define(function (require, exports, module) {
         for (var i = 0; i < this.grainList.length; i++) {
             this.grainList[i].paint();
         }
-    };
-
+    }; 
 
     module.exports = Launcher;
 

@@ -75,8 +75,7 @@ define(function (require, exports, module) {
      */
     Grain.prototype.isDead = function () {
         return Math.abs(this.world.time - this.birthTime)>this.life;
-    };
-
+    }; 
 
     Grain.prototype.calculate = function () {
         //计算位置
@@ -98,10 +97,6 @@ define(function (require, exports, module) {
         this.y += this.vy;
         this.x += this.vx;
         this.alpha = this.initAlpha * (1 - (this.world.time - this.birthTime) / this.life);
-
-
-        //TODO 计算颜色 和 其他
-
     };
 
     Grain.prototype.paint = function () {
@@ -116,9 +111,6 @@ define(function (require, exports, module) {
             this.world.context.restore();
         }
     };
-
-
-    module.exports = Grain;
-
-
+ 
+    module.exports = Grain; 
 });
