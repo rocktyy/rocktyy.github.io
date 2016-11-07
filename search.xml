@@ -5,13 +5,13 @@
     
     <entry>
       <title><![CDATA[123]]></title>
-      <url>https://www.tianyuyan.net.cn/2016/11/07/123/</url>
+      <url>http://www.tianyuyan.net.cn/2016/11/07/123/</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>https://www.tianyuyan.net.cn/2016/10/20/%E7%B2%92%E5%AD%90%E6%98%9F%E7%A9%BA/</url>
+      <url>http://www.tianyuyan.net.cn/2016/10/20/%E7%B2%92%E5%AD%90%E6%98%9F%E7%A9%BA/</url>
       <content type="html"><![CDATA[<hr>
 <p>title: 粒子星空<br>date: 2016-10-20 19:05:54</p>
 <h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>small_grain<br>粒子星空<br>之前看过一个人写的 <a href="https://github.com/jation/CanvasGrain" target="_blank" rel="external">https://github.com/jation/CanvasGrain</a></p>
@@ -24,7 +24,7 @@
     
     <entry>
       <title></title>
-      <url>https://www.tianyuyan.net.cn/2016/10/17/ckeditor/</url>
+      <url>http://www.tianyuyan.net.cn/2016/10/17/ckeditor/</url>
       <content type="html"><![CDATA[<hr>
 <p>title: ckeditor<br>date: 2016-10-17 17:04:39</p>
 <h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>1.CKEditor 自定义 ToolBar 按钮<br><a href="http://blog.csdn.net/jackiehome/article/details/8951708" target="_blank" rel="external">http://blog.csdn.net/jackiehome/article/details/8951708</a></p>
@@ -42,14 +42,14 @@
     
     <entry>
       <title><![CDATA[wechat]]></title>
-      <url>https://www.tianyuyan.net.cn/2016/06/28/layout/</url>
+      <url>http://www.tianyuyan.net.cn/2016/06/28/layout/</url>
       <content type="html"><![CDATA[<p>微信小程序分析文章<br><a href="https://github.com/chemzqm/wept" target="_blank" rel="external">https://github.com/chemzqm/wept</a></p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[html缓存.txt]]></title>
-      <url>https://www.tianyuyan.net.cn/2016/06/27/My-New-Post/</url>
+      <url>http://www.tianyuyan.net.cn/2016/06/27/My-New-Post/</url>
       <content type="html"><![CDATA[<p>本文讲解使用DIV+CSS布局最基本的内容，读完本文你讲会使用DIV+CSS进行简单的页面布局。<br>转载请标明：<a href="http://www.kwstu.com/ArticleView/divcss_2013929173533658" target="_blank" rel="external">http://www.kwstu.com/ArticleView/divcss_2013929173533658</a><br>关于DIV+CSS布局中用到的CSS必备知识请看：<a href="http://www.kwstu.com/ArticleView/divcss_201442291125960" target="_blank" rel="external">http://www.kwstu.com/ArticleView/divcss_201442291125960</a><br>DIV+CSS布局中主要CSS属性介绍：<br>Float:<br>       Float属性是DIV+CSS布局中最基本也是最常用的属性，用于实现多列功能，我们知道<div>标签默认一行只能显示一个，而使用Float属性可以实现一行显示多个div的功能，最直接解释方法就是能实现表格布局的多列功能。<br>Margin:<br>       Margin属性用于设置两个元素之间的距离。<br>Padding:<br>       Padding属性用于设置一个元素的边框与其内容的距离。<br>Clear:<br>       使用Float属性设置一行有多个DIV后（多列），最好在下一行开始之前使用Clear属性清楚一下浮动，否则上面的布局会影响到下面。<br>实例讲解：下面使用实例如果做一个简单又基本的布局，效果如下图：</div></p>
 <p>代码：<br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</a></p>
 <p><html xmlns="http://www.w3.org/1999/xhtml"></html></p>
@@ -62,7 +62,7 @@
     
     <entry>
       <title><![CDATA[跨域问题列表]]></title>
-      <url>https://www.tianyuyan.net.cn/2014/06/27/tyy-blog/</url>
+      <url>http://www.tianyuyan.net.cn/2014/06/27/tyy-blog/</url>
       <content type="html"><![CDATA[<p>1.Mac下chrome跨域设置:<br>通过命令行启动chrome：<br>open -a “Google Chrome” –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
 <p>2.Window下chrome跨域设置:<br>属性 –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
 <p>3.分页设置  ：<a href="http://jqpaginator.keenwon.com/" target="_blank" rel="external">http://jqpaginator.keenwon.com/</a> 分页demo</p>
