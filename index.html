@@ -291,101 +291,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/07/JavaScript-test1/" itemprop="url">
-                  JavaScript_test
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-07T14:16:44+08:00" content="2016-11-07">
-              2016-11-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JavaScript练习网站收集</p>
-<p>在学习的过程中会发现很多知识点如果不在工作中运用或者手写带验证的话，很容易忘记。任何技能的掌握都是需要不断练习的。在此收集一些自己遇到的JavaScript练习的网站。<br>codewars<br>国外的一个练习网站，有JavaScript，也有Python，每种语言都有自己的道场（kata），每个用户都有不同的等级，刷题提高等级，也可以插卡别人优秀的解决方案。你会发现牛人无处不在。<br>javascript-puzzlers<br>44道题，看完你会怀疑你是否真的学过JavaScript😂<br>另附作者的解题链接<a href="http://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html" target="_blank" rel="external">http://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html</a><br><a href="https://freecodecamp.cn" target="_blank" rel="external">https://freecodecamp.cn</a><br>freecodecamp.com的中文版，可以学习前端，后端，数据可视化等知识<br><a href="http://es6katas.org/" target="_blank" rel="external">http://es6katas.org/</a><br>一个用tdd学习es6的网站，学完之后对es6的各种特性会有深入的了解<br><a href="https://www.nowcoder.com/ta/js-assessment" target="_blank" rel="external">https://www.nowcoder.com/ta/js-assessment</a><br>牛客网的练习题<br><a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a><br>有名的oj系统，听说有人通过这个网站刷题进了google<br>nodeschool.io<br>nodeschool,有很多js和es6以及web相关的教程<br><a href="https://www.hackerrank.com" target="_blank" rel="external">https://www.hackerrank.com</a><br>一个英文的学习网站，类似oj的形式，有数据结构算法的课程，也有正则表达式等课程，质量还不错</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/10/20/粒子星空/" itemprop="url">
                   未命名
                 </a>
@@ -764,13 +669,111 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/06/27/tyy-blog/" itemprop="url">
+                  跨域问题列表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-06-27T12:06:17+08:00" content="2014-06-27">
+              2014-06-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.Mac下chrome跨域设置:<br>通过命令行启动chrome：<br>open -a “Google Chrome” –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
+<p>2.Window下chrome跨域设置:<br>属性 –args –disable-web-security<br>出现如下提示则说明成功，然后就随意的调用不同域下的数据了。</p>
+<p>3.分页设置  ：<a href="http://jqpaginator.keenwon.com/" target="_blank" rel="external">http://jqpaginator.keenwon.com/</a> 分页demo</p>
+<p>4.<br>jquery判断浏览器后退时候弹出消息的方法:<br>实现<br>jQuery(document).ready(function ($) {<br>if (window.history &amp;&amp; window.history.pushState) {<br>$(window).on(‘popstate’, function () {<br>var hashLocation = location.hash;<br>var hashSplit = hashLocation.split(“#!/“);<br>var hashName = hashSplit[1];<br>if (hashName !== ‘’) {<br>var hash = window.location.hash;<br>if (hash === ‘’) {<br>alert(“Back button isn’t supported. You are leaving this application on next clicking the back button”);<br>}<br>}<br>});<br>window.history.pushState(‘forward’, null, ‘./#forward’);<br>}<br>});</p>
+<p>5.jquery 设置  disabled属性<br>//两种方法设置disabled属性<br>$(‘#areaSelect’).attr(“disabled”,true);<br>$(‘#areaSelect’).attr(“disabled”,”disabled”);<br>//三种方法移除disabled属性<br>$(‘#areaSelect’).attr(“disabled”,false);<br>$(‘#areaSelect’).removeAttr(“disabled”);<br>$(‘#areaSelect’).attr(“disabled”,””);</p>
+<ol>
+<li>手机触屏触摸特效javascript-TouchSwipe（依赖于jquery库）中文说明<br><a href="http://blog.csdn.net/bingqingsuimeng/article/details/39609899" target="_blank" rel="external">http://blog.csdn.net/bingqingsuimeng/article/details/39609899</a></li>
+</ol>
+<p>7.多行文本  显示。。。 <a href="http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html" target="_blank" rel="external">http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -801,7 +804,7 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://tva2.sinaimg.cn/crop.4.0.125.125.180/c4b7c1b4jw8f67624d4gtj2046046wej.jpg"
+               src="https://tva2.sinaimg.cn/crop.4.0.125.125.180/c4b7c1b4jw8f67624d4gtj2046046wej.jpg"
                alt="rock" />
           <p class="site-author-name" itemprop="name">rock</p>
           <p class="site-description motion-element" itemprop="description">personal blog for technical communication</p>
@@ -809,7 +812,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
