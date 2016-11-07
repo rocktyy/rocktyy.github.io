@@ -4,6 +4,14 @@
   
     
     <entry>
+      <title><![CDATA[JavaScript_test]]></title>
+      <url>http://www.tianyuyan.net.cn/2016/11/07/JavaScript-test/</url>
+      <content type="html"><![CDATA[<p>JavaScript练习网站收集</p>
+<p>在学习的过程中会发现很多知识点如果不在工作中运用或者手写带验证的话，很容易忘记。任何技能的掌握都是需要不断练习的。在此收集一些自己遇到的JavaScript练习的网站。<br>codewars<br>国外的一个练习网站，有JavaScript，也有Python，每种语言都有自己的道场（kata），每个用户都有不同的等级，刷题提高等级，也可以插卡别人优秀的解决方案。你会发现牛人无处不在。<br>javascript-puzzlers<br>44道题，看完你会怀疑你是否真的学过JavaScript😂<br>另附作者的解题链接<a href="http://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html" target="_blank" rel="external">http://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html</a><br><a href="https://freecodecamp.cn" target="_blank" rel="external">https://freecodecamp.cn</a><br>freecodecamp.com的中文版，可以学习前端，后端，数据可视化等知识<br><a href="http://es6katas.org/" target="_blank" rel="external">http://es6katas.org/</a><br>一个用tdd学习es6的网站，学完之后对es6的各种特性会有深入的了解<br><a href="https://www.nowcoder.com/ta/js-assessment" target="_blank" rel="external">https://www.nowcoder.com/ta/js-assessment</a><br>牛客网的练习题<br><a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a><br>有名的oj系统，听说有人通过这个网站刷题进了google<br>nodeschool.io<br>nodeschool,有很多js和es6以及web相关的教程<br><a href="https://www.hackerrank.com" target="_blank" rel="external">https://www.hackerrank.com</a><br>一个英文的学习网站，类似oj的形式，有数据结构算法的课程，也有正则表达式等课程，质量还不错</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>http://www.tianyuyan.net.cn/2016/10/20/%E7%B2%92%E5%AD%90%E6%98%9F%E7%A9%BA/</url>
       <content type="html"><![CDATA[<hr>
